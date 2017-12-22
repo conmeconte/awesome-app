@@ -1,11 +1,15 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path'); 
 const PORT = process.env.PORT || 9000; 
 
 const app = express(); 
 
 
 app.use(cors()); //setting two headers to allow cross origin. only for testing stuff not your live site. 
+
+app.use(express.static(path.resolve(__dirname, 'client', 'dist')));
+
 
 app.get("/api/get-stuff", (req, res) => {
     const stuff = {
@@ -26,7 +30,7 @@ app.get('/api/better-stuff', (req, res)=>{
 })
 
 app.get('*', (req, res)=> {
-    res.send('<h1>Aesome App working</h1>');
+    res.send(path.resolve(__dirname, 'client', 'dist', 'index.html'));
 });
 
 
