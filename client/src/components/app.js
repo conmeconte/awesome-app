@@ -7,11 +7,11 @@ const App = () => (
     <div>
         <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/get-data">Get Data</Link></li>
+            <li><Link to="/mickey-mouse">Mickey Mouse</Link></li>
         </ul>
 
         <Route exact path="/" component={Home}/>
-        <Route path="/get-data" component={GetData}/>
+        <Route path="/mickey-mouse" component={GetData}/>
     </div>
 );
 
